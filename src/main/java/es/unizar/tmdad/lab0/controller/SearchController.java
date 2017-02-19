@@ -1,6 +1,8 @@
 package es.unizar.tmdad.lab0.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +23,8 @@ public class SearchController {
     }
 
     @RequestMapping("/search")
-    public String search(@RequestParam("q") String q, Model m) {
-    	m.addAttribute("res", twitter.search(q));
-        return "search :: content";
+    public ResponseEntity search(@RequestParam("q") String q, Model m) {
+		return new ResponseEntity<>(twitter.search(q).getTweets(), HttpStatus.OK);
+
     }
 }
