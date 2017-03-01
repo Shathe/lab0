@@ -42,7 +42,7 @@ public class TwitterLookupService {
 		if (!map.containsKey(q)) {
 			// Si la query no se esta buscando ya se inserta en el mapa
 			if (map.size() >= 10) {
-				// Como maximo debe haber 10 wueries buscando a la vez
+				// Como maximo debe haber 10 queries buscando a la vez
 				// El criterio de eliminación es el más viejo, FIFO
 				Object firstKey = map.keySet().toArray()[0];
 				map.get(firstKey).close();

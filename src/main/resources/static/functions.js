@@ -32,7 +32,7 @@ app.controller('myCtrl', function($scope) {
 });
 
 /*
- * Iniciarlizar la conexion con el servidor con el endpoint (del wwebsocket) llamado twitter
+ * Iniciarlizar la conexion con el servidor con el endpoint (del websocket) llamado twitter
  */
 function initConn() {
 	ws = new SockJS("/twitter");
